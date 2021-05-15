@@ -6,7 +6,8 @@ the list of Notable features in java8
   2. Functional interface 
   3. Predicate interface
   4. Method references
-  5. Collection Improvements Interfaces such as Streams , Parallel Stream
+  5. ForEach 
+  6. Collection Improvements Interfaces such as Streams , Parallel Stream
 
 Lambda Expression:
   
@@ -32,3 +33,82 @@ Lambda Expression:
 
               }
             }
+            
+            
+##### Lambda expression assigns the method or function to a variable ,it enables to pass the method as an argument 
+
+ablockofCode = ()->{
+
+
+
+} 
+when you enable lambda expression you dont need to specify 
+1. method returntype
+2. method name 
+3. parameterlist datatype 
+
+                          public class Candidate {
+                            public void participate(Performing perf) {
+                              perf.perform();
+                            }
+
+                            public static void main(String[] args) {
+                              Candidate ref = new Candidate();
+                              // passing the method as parameter
+                                ref.participate(()->{
+                                  System.out.println("cooking implementation");
+                                });
+                                ref.participate(()->{
+                                  System.out.println("fighting competition");
+                                });
+                            }
+                          }
+
+Lambda expression consist of 3 components 
+1. Argument list 
+2. Arrow - token
+3. Body 
+
+no Parameter syntax:
+
+() -> {
+
+}
+
+one parameter Syntax 
+
+(p1) -> {
+ 
+ }
+ 
+ two param syntax 
+ 
+ (p1,p2) -> {
+ 
+ 
+ }
+ 
+#####Functional Interface
+
+* Functional interface is an interface which contains only one abstract method whereas it do have n number of default or static methods 
+
+* Functional interface should be declared along with an annotation @FunctionalInterface, though its optional , but it will create a restriction in the 
+interface , like not to add any additional abstract method.
+
+                      @FunctionalInterface
+                      public interface Performing {
+                        void perform();// abstract method
+                      }
+                      
+       * the Lambda expression is providing the implementation of functional iterface 
+
+
+#### Streams 
+
+A sequence of elements supporting sequential and parallel aggregate operation
+
+
+
+
+
+
